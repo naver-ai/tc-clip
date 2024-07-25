@@ -1,0 +1,139 @@
+#@package _global_
+
+shot: null
+base: null
+
+k400:
+  dataset_name: kinetics400
+  root: /YOUR/PATH/TO/DATASET/k400
+  num_classes:
+    default: 400
+    base: 200
+    novel: 200
+    temporal: 32
+    static: 32
+  label_files:
+    # default
+    default: labels/kinetics_400_labels.csv
+    mini: labels/kinetics_400_mini200_labels.csv
+    base: labels/kinetics_400_base_labels.csv
+    novel: labels/kinetics_400_novel_labels.csv
+    # temporal/static
+    temporal: labels/labels_temporal_static/kinetics_400_temporal32_labels.csv  # temporal/static subset
+    static: labels/labels_temporal_static/kinetics_400_static32_labels.csv
+    # llm
+    llm: labels/labels_froster/kinetics_400_llm_labels.json # llm-rephrased labels
+    base_llm: labels/labels_froster/kinetics_400_base_llm_labels.json
+    novel_llm: labels/labels_froster/kinetics_400_novel_llm_labels.json
+  ann_files:
+    # default
+    train: datasets_splits/k400_splits/train.txt
+    train_tiny: datasets_splits/k400_splits/train_tiny.txt  # k400-tiny subset from ViFi-CLIP codebase
+    val: datasets_splits/k400_splits/val.txt
+    # base/novel
+    base_train: datasets_splits/base2novel_splits/k400_splits/fs_base_s${base}_train.txt
+    base_val: datasets_splits/base2novel_splits/k400_splits/base_val.txt
+    novel_val: datasets_splits/base2novel_splits/k400_splits/novel_val.txt
+    # temporal/static subset
+    temporal_train: datasets_splits/temporal_static_splits/k400_splits/train_temporal32.txt
+    static_train: datasets_splits/temporal_static_splits/k400_splits/train_static32.txt
+    temporal_val: datasets_splits/temporal_static_splits/k400_splits/val_temporal32.txt
+    static_val: datasets_splits/temporal_static_splits/k400_splits/val_static32.txt
+    temporal_vis4: datasets_splits/temporal_static_splits/k400_splits/val_temporal32_vis4.txt
+    static_vis4: datasets_splits/temporal_static_splits/k400_splits/val_static32_vis4.txt
+
+k600:
+  dataset_name: kinetics600
+  root: /YOUR/PATH/TO/DATASET/k600
+  num_classes:
+    default: 160
+  label_files:
+    val1: labels/ZS_split1_K600.csv
+    val2: labels/ZS_split2_K600.csv
+    val3: labels/ZS_split3_K600.csv
+    # llm
+    val1_llm: labels/labels_froster/ZS_split1_K600_llm.json
+    val2_llm: labels/labels_froster/ZS_split2_K600_llm.json
+    val3_llm: labels/labels_froster/ZS_split3_K600_llm.json
+  ann_files:
+    val1: datasets_splits/k600_splits/ZS_split1_K600_eval.txt
+    val2: datasets_splits/k600_splits/ZS_split2_K600_eval.txt
+    val3: datasets_splits/k600_splits/ZS_split3_K600_eval.txt
+
+hmdb51:
+  dataset_name: hmdb51
+  root: /YOUR/PATH/TO/DATASET/hmdb51
+  num_classes:
+    default: 51
+    base: 26
+    novel: 25
+  label_files:
+    default: labels/hmdb_51_labels.csv
+    base: labels/hmdb_51_base_labels.csv
+    novel: labels/hmdb_51_novel_labels.csv
+    # llm
+    llm: labels/labels_froster/hmdb_51_llm_labels.json
+    base_llm: labels/labels_froster/hmdb_51_base_llm_labels.json
+    novel_llm: labels/labels_froster/hmdb_51_novel_llm_labels.json
+  ann_files:
+    few_shot_train: datasets_splits/hmdb_splits/train1_few_shot_${shot}.txt
+    val1: datasets_splits/hmdb_splits/val1.txt
+    val2: datasets_splits/hmdb_splits/val2.txt
+    val3: datasets_splits/hmdb_splits/val3.txt
+    base_train: datasets_splits/base2novel_splits/hmdb_splits/fs_base_s${base}_train.txt
+    base_val: datasets_splits/base2novel_splits/hmdb_splits/base_val.txt
+    novel_val: datasets_splits/base2novel_splits/hmdb_splits/novel_val.txt
+
+ucf101:
+  dataset_name: ucf101
+  root: /YOUR/PATH/TO/DATASET/ucf101
+  num_classes:
+    default: 101
+    base: 51
+    novel: 50
+  label_files:
+    default: labels/ucf_101_labels.csv
+    base: labels/ucf_101_base_labels.csv
+    novel: labels/ucf_101_novel_labels.csv
+    # llm
+    llm: labels/labels_froster/ucf_101_llm_labels.json
+    base_llm: labels/labels_froster/ucf_101_base_llm_labels.json
+    novel_llm: labels/labels_froster/ucf_101_novel_llm_labels.json
+  ann_files:
+    few_shot_train: datasets_splits/ucf_splits/train1_few_shot_${shot}.txt
+    val1: datasets_splits/ucf_splits/val1.txt
+    val2: datasets_splits/ucf_splits/val2.txt
+    val3: datasets_splits/ucf_splits/val3.txt
+    base_train: datasets_splits/base2novel_splits/ucf_splits/fs_base_s${base}_train.txt
+    base_val: datasets_splits/base2novel_splits/ucf_splits/base_val.txt
+    novel_val: datasets_splits/base2novel_splits/ucf_splits/novel_val.txt
+
+ssv2:
+  dataset_name: ssv2
+  root: /YOUR/PATH/TO/DATASET/ssv2
+  num_classes:
+    default: 174
+    base: 87
+    novel: 87
+    temporal: 18
+    static: 16
+  label_files:
+    default: labels/ssv2_labels.csv
+    base: labels/ssv2_174_base_labels.csv
+    novel: labels/ssv2_174_novel_labels.csv
+    temporal: labels/labels_temporal_static/ssv2_temporal18_labels.csv
+    static: labels/labels_temporal_static/ssv2_static16_labels.csv
+  ann_files:
+    train: datasets_splits/ssv2_splits/train.txt
+    few_shot_train: datasets_splits/ssv2_splits/train1_few_shot_${shot}.txt
+    val: datasets_splits/ssv2_splits/validation.txt
+    base_train: datasets_splits/base2novel_splits/ssv2_splits/fs_base_s${base}_train.txt
+    base_val: datasets_splits/base2novel_splits/ssv2_splits/base_val.txt
+    novel_val: datasets_splits/base2novel_splits/ssv2_splits/novel_val.txt
+    # temporal/static
+    temporal_train: datasets_splits/temporal_static_splits/ssv2_splits/train_temporal18.txt
+    static_train: datasets_splits/temporal_static_splits/ssv2_splits/train_static16.txt
+    temporal_val: datasets_splits/temporal_static_splits/ssv2_splits/validation_temporal18.txt
+    static_val: datasets_splits/temporal_static_splits/ssv2_splits/validation_static16.txt
+
+parse_ucf101: true

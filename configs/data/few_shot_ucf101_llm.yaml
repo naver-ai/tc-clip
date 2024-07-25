@@ -1,0 +1,14 @@
+#@package _global_
+data:
+  train:
+    dataset_name: ucf101_few_shot_train_{shot}_shot_llm
+    root: ${ucf101.root}
+    num_classes: ${ucf101.num_classes.default}
+    label_file: ${ucf101.label_files.llm}
+    ann_file: ${ucf101.ann_files.few_shot_train}
+  val:
+    dataset_name: ucf101_val1_llm
+    root: ${ucf101.root}
+    num_classes: ${ucf101.num_classes.default}
+    label_file: ${ucf101.label_files.llm}
+    ann_file: ${ucf101.ann_files.val1}

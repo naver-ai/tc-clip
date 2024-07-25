@@ -1,0 +1,7 @@
+#@package _global_
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+hydra/job_logging: disabled
+hydra/hydra_logging: disabled

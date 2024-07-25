@@ -1,0 +1,71 @@
+#@package _global_
+data:
+  train:
+    dataset_name: k400_train_llm
+    root: ${k400.root}
+    num_classes: ${k400.num_classes.default}
+    label_file: ${k400.label_files.llm}
+    ann_file: ${k400.ann_files.train}
+  val:
+    dataset_name: k400_val_llm
+    root: ${k400.root}
+    num_classes: ${k400.num_classes.default}
+    label_file: ${k400.label_files.llm}
+    ann_file: ${k400.ann_files.val}
+  test:
+    - name: hmdb51_val_llm
+      protocol: avg_std
+      dataset_list:
+      - dataset_name: hmdb51_val1_llm
+        root: ${hmdb51.root}
+        num_classes: ${hmdb51.num_classes.default}
+        label_file: ${hmdb51.label_files.llm}
+        ann_file: ${hmdb51.ann_files.val1}
+      - dataset_name: hmdb51_val2_llm
+        root: ${hmdb51.root}
+        num_classes: ${hmdb51.num_classes.default}
+        label_file: ${hmdb51.label_files.llm}
+        ann_file: ${hmdb51.ann_files.val2}
+      - dataset_name: hmdb51_val3_llm
+        root: ${hmdb51.root}
+        num_classes: ${hmdb51.num_classes.default}
+        label_file: ${hmdb51.label_files.llm}
+        ann_file: ${hmdb51.ann_files.val3}
+
+    - name: ucf101_val_llm
+      protocol: avg_std
+      dataset_list:
+      - dataset_name: ucf101_val1_llm
+        root: ${ucf101.root}
+        num_classes: ${ucf101.num_classes.default}
+        label_file: ${ucf101.label_files.llm}
+        ann_file: ${ucf101.ann_files.val1}
+      - dataset_name: ucf101_val2_llm
+        root: ${ucf101.root}
+        num_classes: ${ucf101.num_classes.default}
+        label_file: ${ucf101.label_files.llm}
+        ann_file: ${ucf101.ann_files.val2}
+      - dataset_name: ucf101_val3_llm
+        root: ${ucf101.root}
+        num_classes: ${ucf101.num_classes.default}
+        label_file: ${ucf101.label_files.llm}
+        ann_file: ${ucf101.ann_files.val3}
+
+    - name: k600_val_llm
+      protocol: avg_std
+      dataset_list:
+      - dataset_name: k600_val1_llm
+        root: ${k600.root}
+        num_classes: ${k600.num_classes.default}
+        label_file: ${k600.label_files.val1_llm}
+        ann_file: ${k600.ann_files.val1}
+      - dataset_name: k600_val2_llm
+        root: ${k600.root}
+        num_classes: ${k600.num_classes.default}
+        label_file: ${k600.label_files.val2_llm}
+        ann_file: ${k600.ann_files.val2}
+      - dataset_name: k600_val3_llm
+        root: ${k600.root}
+        num_classes: ${k600.num_classes.default}
+        label_file: ${k600.label_files.val3_llm}
+        ann_file: ${k600.ann_files.val3}

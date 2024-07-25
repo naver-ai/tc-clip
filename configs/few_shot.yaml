@@ -1,0 +1,52 @@
+# few-shot setting
+defaults:
+  - aug: default_aug  # augmentation
+  - common: default   # common fields
+  - data: ???         # data protocol
+  - hydra_configs: default_hydra
+  - logging: wandb    # logging
+  - optimizer: adamw  # optimizer, scheduler
+  - trainer: tc_clip  # model
+  - _self_
+
+protocol: few_shot
+shot: ???     # {2, 4, 8, 16}-shot in few-shot setting
+resume: null  # checkpoint path
+output: ???   # output path
+eval: null    # eval=test/val for eval-only mode
+use_wandb: true
+
+# Run parameters
+epochs: 50  # total epochs
+warmup_epochs: 5
+lr: 2e-06
+lr_min: 2e-08
+total_batch_size: 64
+batch_size: 4  # batch per gpu
+accumulation_steps: 4 # 4gpu case
+test_batch_size: 8
+num_workers: 8
+pin_memory: true
+worker_init_fn: true
+
+# view
+input_size: 224
+num_frames: 16
+num_clip: 2   # multi view during train/testing
+num_crop: 1
+
+# Run tools
+seed: 1024
+distributed: true
+use_cudnn: true
+opt_level: O1
+auto_resume: false
+save_freq: 10
+save_intermediate: false
+print_freq: 50
+final_test: false
+early_stop: false # early stopping during training
+
+# others
+selected_option: ${hydra:runtime.choices} # selected defaults
+overriden_values: ${hydra:overrides}      # overrides with cli arguments

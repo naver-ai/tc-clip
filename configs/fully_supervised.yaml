@@ -1,0 +1,52 @@
+# fully-supervised setting
+defaults:
+  - aug: default_aug  # augmentation
+  - common: default   # common fields
+  - data: fully_supervised_k400  # data protocol
+  - hydra_configs: default_hydra
+  - logging: wandb    # logging
+  - optimizer: adamw  # optimizer, scheduler
+  - trainer: tc_clip  # model
+  - _self_
+
+protocol: fully_supervised
+resume: null  # checkpoint path
+output: ???   # output path
+eval: null    # eval=test/val for eval-only mode
+use_wandb: true
+
+# Run parameters
+epochs: 30  # total epochs
+warmup_epochs: 5
+lr: 2.2e-05
+lr_min: 2.2e-07
+total_batch_size: 512
+batch_size: 4  # batch per gpu
+accumulation_steps: 32 # 4gpu case
+test_batch_size: 8
+num_workers: 8
+pin_memory: true
+worker_init_fn: true
+
+# view
+input_size: 224
+num_frames: 16
+num_clip: 1   # single view during training
+num_crop: 1
+multi_view_inference: true  # multi view during final testing
+
+# Run tools
+seed: 1024
+distributed: true
+use_cudnn: true
+opt_level: O1
+auto_resume: false
+save_freq: 1
+save_intermediate: true   # save intermediate checkpoint
+print_freq: 50
+final_test: true  # final testing with the best checkpoint after training
+early_stop: false # early stopping during training
+
+# others
+selected_option: ${hydra:runtime.choices}
+overriden_values: ${hydra:overrides}

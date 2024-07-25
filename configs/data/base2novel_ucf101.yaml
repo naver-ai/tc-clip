@@ -1,0 +1,23 @@
+#@package _global_
+data:
+  train:
+    dataset_name: ucf101_base_s{base}_train
+    root: ${ucf101.root}
+    num_classes: ${ucf101.num_classes.base}
+    label_file: ${ucf101.label_files.base}
+    ann_file: ${ucf101.ann_files.base_train}
+  val:
+    dataset_name: ucf101_base_val
+    root: ${ucf101.root}
+    num_classes: ${ucf101.num_classes.base}
+    label_file: ${ucf101.label_files.base}
+    ann_file: ${ucf101.ann_files.base_val}
+  test:
+    - name: ucf101_novel_val
+      protocol: top1
+      dataset_list:
+      - dataset_name: ucf101_novel_val
+        root: ${ucf101.root}
+        num_classes: ${ucf101.num_classes.novel}
+        label_file: ${ucf101.label_files.novel}
+        ann_file: ${ucf101.ann_files.novel_val}

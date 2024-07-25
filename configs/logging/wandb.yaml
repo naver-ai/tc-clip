@@ -1,0 +1,8 @@
+#@package _global_
+wandb_api_key: /YOUR/WANDB/API/KEY
+wandb_project: TC-CLIP
+wandb_logging_dir: /YOUR/PATH/TO/WANDB/OFFLINE/LOGGING/DIR
+wandb_tags:
+  - ${protocol}
+  - ${selected_option.data}
+  - ${model_arch}

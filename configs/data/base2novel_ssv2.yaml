@@ -1,0 +1,23 @@
+#@package _global_
+data:
+  train:
+    dataset_name: ssv2_base_s{base}_train
+    root: ${ssv2.root}
+    num_classes: ${ssv2.num_classes.base}
+    label_file: ${ssv2.label_files.base}
+    ann_file: ${ssv2.ann_files.base_train}
+  val:
+    dataset_name: ssv2_base_val
+    root: ${ssv2.root}
+    num_classes: ${ssv2.num_classes.base}
+    label_file: ${ssv2.label_files.base}
+    ann_file: ${ssv2.ann_files.base_val}
+  test:
+    - name: ssv2_novel_val
+      protocol: top1
+      dataset_list:
+      - dataset_name: ssv2_novel_val
+        root: ${ssv2.root}
+        num_classes: ${ssv2.num_classes.novel}
+        label_file: ${ssv2.label_files.novel}
+        ann_file: ${ssv2.ann_files.novel_val}

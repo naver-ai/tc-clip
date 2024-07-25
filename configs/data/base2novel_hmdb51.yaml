@@ -1,0 +1,23 @@
+#@package _global_
+data:
+  train:
+    dataset_name: hmdb51_base_s{base}_train
+    root: ${hmdb51.root}
+    num_classes: ${hmdb51.num_classes.base}
+    label_file: ${hmdb51.label_files.base}
+    ann_file: ${hmdb51.ann_files.base_train}
+  val:
+    dataset_name: hmdb51_base_val
+    root: ${hmdb51.root}
+    num_classes: ${hmdb51.num_classes.base}
+    label_file: ${hmdb51.label_files.base}
+    ann_file: ${hmdb51.ann_files.base_val}
+  test:
+    - name: hmdb51_novel_val
+      protocol: top1
+      dataset_list:
+        - dataset_name: hmdb51_novel_val
+          root: ${hmdb51.root}
+          num_classes: ${hmdb51.num_classes.novel}
+          label_file: ${hmdb51.label_files.novel}
+          ann_file: ${hmdb51.ann_files.novel_val}

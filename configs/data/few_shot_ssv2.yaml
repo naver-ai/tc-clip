@@ -1,0 +1,14 @@
+#@package _global_
+data:
+  train:
+    dataset_name: ssv2_few_shot_train_{shot}_shot
+    root: ${ssv2.root}
+    num_classes: ${ssv2.num_classes.default}
+    label_file: ${ssv2.label_files.default}
+    ann_file: ${ssv2.ann_files.few_shot_train}
+  val:
+    dataset_name: ssv2_val
+    root: ${ssv2.root}
+    num_classes: ${ssv2.num_classes.default}
+    label_file: ${ssv2.label_files.default}
+    ann_file: ${ssv2.ann_files.val}

@@ -1,0 +1,14 @@
+#@package _global_
+data:
+  train:
+    dataset_name: hmdb51_few_shot_train_{shot}_shot_llm
+    root: ${hmdb51.root}
+    num_classes: ${hmdb51.num_classes.default}
+    label_file: ${hmdb51.label_files.llm}
+    ann_file: ${hmdb51.ann_files.few_shot_train}
+  val:
+    dataset_name: hmdb51_val1_llm
+    root: ${hmdb51.root}
+    num_classes: ${hmdb51.num_classes.default}
+    label_file: ${hmdb51.label_files.llm}
+    ann_file: ${hmdb51.ann_files.val1}

@@ -1,0 +1,23 @@
+#@package _global_
+data:
+  train:
+    dataset_name: k400_base_s{base}_train_llm
+    root: ${k400.root}
+    num_classes: ${k400.num_classes.base}
+    label_file: ${k400.label_files.base_llm}
+    ann_file: ${k400.ann_files.base_train}
+  val:
+    dataset_name: k400_base_val_llm
+    root: ${k400.root}
+    num_classes: ${k400.num_classes.base}
+    label_file: ${k400.label_files.base_llm}
+    ann_file: ${k400.ann_files.base_val}
+  test:
+    - name: k400_novel_val_llm
+      protocol: top1
+      dataset_list:
+      - dataset_name: k400_novel_val_llm
+        root: ${k400.root}
+        num_classes: ${k400.num_classes.novel}
+        label_file: ${k400.label_files.novel_llm}
+        ann_file: ${k400.ann_files.novel_val}

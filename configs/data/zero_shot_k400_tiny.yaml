@@ -1,0 +1,90 @@
+#@package _global_
+data:
+  train:
+    dataset_name: k400_train_tiny
+    root: ${k400.root}
+    num_classes: ${k400.num_classes.default}
+    label_file: ${k400.label_files.default}
+    ann_file: ${k400.ann_files.train_tiny}
+  val:
+    dataset_name: k400_val
+    root: ${k400.root}
+    num_classes: ${k400.num_classes.default}
+    label_file: ${k400.label_files.default}
+    ann_file: ${k400.ann_files.val}
+  test:
+    - name: hmdb51_val
+      protocol: avg_std
+      dataset_list:
+      - dataset_name: hmdb51_val1
+        root: ${hmdb51.root}
+        num_classes: ${hmdb51.num_classes.default}
+        label_file: ${hmdb51.label_files.default}
+        ann_file: ${hmdb51.ann_files.val1}
+      - dataset_name: hmdb51_val2
+        root: ${hmdb51.root}
+        num_classes: ${hmdb51.num_classes.default}
+        label_file: ${hmdb51.label_files.default}
+        ann_file: ${hmdb51.ann_files.val2}
+      - dataset_name: hmdb51_val3
+        root: ${hmdb51.root}
+        num_classes: ${hmdb51.num_classes.default}
+        label_file: ${hmdb51.label_files.default}
+        ann_file: ${hmdb51.ann_files.val3}
+
+    - name: hmdb51_val_ing
+      protocol: avg_std
+      dataset_list:
+      - dataset_name: hmdb51_val1_ing
+        root: ${hmdb51.root}
+        num_classes: ${hmdb51.num_classes.default}
+        label_file: ${hmdb51.label_files.ing}
+        ann_file: ${hmdb51.ann_files.val1}
+      - dataset_name: hmdb51_val2_ing
+        root: ${hmdb51.root}
+        num_classes: ${hmdb51.num_classes.default}
+        label_file: ${hmdb51.label_files.ing}
+        ann_file: ${hmdb51.ann_files.val2}
+      - dataset_name: hmdb51_val3_ing
+        root: ${hmdb51.root}
+        num_classes: ${hmdb51.num_classes.default}
+        label_file: ${hmdb51.label_files.ing}
+        ann_file: ${hmdb51.ann_files.val3}
+
+    - name: ucf101_val
+      protocol: avg_std
+      dataset_list:
+      - dataset_name: ucf101_val1
+        root: ${ucf101.root}
+        num_classes: ${ucf101.num_classes.default}
+        label_file: ${ucf101.label_files.default}
+        ann_file: ${ucf101.ann_files.val1}
+      - dataset_name: ucf101_val2
+        root: ${ucf101.root}
+        num_classes: ${ucf101.num_classes.default}
+        label_file: ${ucf101.label_files.default}
+        ann_file: ${ucf101.ann_files.val2}
+      - dataset_name: ucf101_val3
+        root: ${ucf101.root}
+        num_classes: ${ucf101.num_classes.default}
+        label_file: ${ucf101.label_files.default}
+        ann_file: ${ucf101.ann_files.val3}
+
+    - name: k600_val
+      protocol: avg_std
+      dataset_list:
+      - dataset_name: k600_val1
+        root: ${k600.root}
+        num_classes: ${k600.num_classes.default}
+        label_file: ${k600.label_files.val1}
+        ann_file: ${k600.ann_files.val1}
+      - dataset_name: k600_val2
+        root: ${k600.root}
+        num_classes: ${k600.num_classes.default}
+        label_file: ${k600.label_files.val2}
+        ann_file: ${k600.ann_files.val2}
+      - dataset_name: k600_val3
+        root: ${k600.root}
+        num_classes: ${k600.num_classes.default}
+        label_file: ${k600.label_files.val3}
+        ann_file: ${k600.ann_files.val3}

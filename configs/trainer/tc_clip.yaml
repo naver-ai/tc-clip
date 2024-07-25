@@ -1,0 +1,26 @@
+#@package _global_
+trainer_name: TCCLIP
+vision_model: TCVisionTransformer
+vision_block: TCAttentionBlock
+text_block: ResidualAttentionBlock
+use_custom_attention: true
+model_arch: ViT-B/16
+patch_size: 16
+freeze: null
+lr_10x: true
+
+# vision side
+positional_embedding_type: space
+local_global_bias: true # learnable local-global bias
+context_token_k: 96 # total number of context tokens
+seed_token_a: 0.3 # percentage of seed tokens
+tome_r: 100 # number of tokens to be merged
+tome_d: 0 # constant r
+
+# text side
+n_ctx: 4
+ctx_init: 'a photo of a'
+im_stop_grad: true
+prompt_generation_layer_init: clip
+prompt_generation_layer_level: 12
+context_length: 30
