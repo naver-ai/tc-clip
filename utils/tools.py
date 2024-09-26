@@ -191,6 +191,10 @@ def load_checkpoint(config, model, optimizer, lr_scheduler, logger, model_only=F
         if "module.prompt_learner.complete_text_embeddings" in load_state_dict:
             del load_state_dict["module.prompt_learner.complete_text_embeddings"]
 
+        # Remove "module." prefix if present
+        if not hasattr(model, 'module'):
+            load_state_dict = {k.replace('module.', ''): v for k, v in load_state_dict.items()}
+
         """reference: https://github.com/mlfoundations/wise-ft"""
         if config.get('wise_ft', 0.0) != 0:
             keywords_to_exclude = ['local_global_bias', 'prompt_learner', 'prompt_generation']

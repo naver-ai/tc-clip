@@ -5,9 +5,13 @@
 <sub> (&dagger;Work done during an internship at NAVER AI Lab, *corresponding authors) <br>
 > [NAVER AI LAB](https://naver-career.gitbook.io/en/teams/clova-cic/ai-lab)
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-orange.svg)](https://arxiv.org/abs/2404.09490)
-[![models](https://img.shields.io/badge/Models-Link-yellow.svg)](https://drive.google.com/drive/folders/1dKkzYsCCk2_hcXTcHH1ZwmyQMiLFNWqo)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/leveraging-temporal-contextualization-for/zero-shot-action-recognition-on-kinetics)](https://paperswithcode.com/paper/leveraging-temporal-contextualization-for)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/leveraging-temporal-contextualization-for/zero-shot-action-recognition-on-kinetics)](https://paperswithcode.com/sota/zero-shot-action-recognition-on-kinetics?p=leveraging-temporal-contextualization-for) \
+[![paper](https://img.shields.io/badge/arXiv-Paper-red.svg)](https://arxiv.org/abs/2404.09490)
+[![models](https://img.shields.io/badge/Link-Models-yellow.svg)](https://drive.google.com/drive/folders/1dKkzYsCCk2_hcXTcHH1ZwmyQMiLFNWqo)
+[![video](https://img.shields.io/badge/5Min-Video-87CEEB)](https://www.youtube.com/watch?v=cI0e8nEoC6s)
+[![poster](https://img.shields.io/badge/Presentation-Poster-B762C1)](docs/tc_clip_poster_eccv2024.pdf)
+[![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)](tc_clip_inference_demo.ipynb)
+
 
 Official PyTorch implementation of the ECCV 2024 paper "**Leveraging Temporal Contextualization for Video Action Recognition**"
 
@@ -28,6 +32,7 @@ Official PyTorch implementation of the ECCV 2024 paper "**Leveraging Temporal Co
 
 
 ### Updates
+* (2024/09/26): Jupyter notebook demo released. Try TC-CLIP with your custom videos!
 * (2024/07/24): Code and pretrained models are released.
 * (2024/07/02): TC-CLIP is accepted at ECCV 2024! 🎉
 
