@@ -172,13 +172,10 @@ CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
 ## :pushpin: Citation
 If you find TC-CLIP useful in your research, please consider citing our paper:
 ```
-@article{kim2024dtm,
-      title={Morphing Tokens Draw Strong Masked Image Models}, 
-      author={Taekyung Kim and Byeongho Heo and Dongyoon Han},
-      year={2024},
-      eprint={2401.00254},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2401.00254}, 
+@article{kim2024tcclip,
+  title={Leveraging Temporal Contextualization for Video Action Recognition},
+  author={Kim, Minji and Han, Dongyoon and Kim, Taekyung and Han, Bohyung},
+  journal={European Conference on Computer Vision (ECCV)},
+  year={2024}
 }
 ```  
