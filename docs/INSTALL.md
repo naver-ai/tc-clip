@@ -24,7 +24,7 @@ pip install -r requirements.txt
 conda create -y --name tc_clip python=3.8
 
 # Activate the environment
-conda activate vclip
+conda activate tc_clip
 
 # Install PyTorch
 conda install pytorch==1.13.0 torchvision==0.14.0 -c pytorch -c nvidia
